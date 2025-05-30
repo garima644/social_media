@@ -4,7 +4,6 @@ require_once '../inc/connection.php' ;
 $user = $_REQUEST['username'] ;
 $pass = $_REQUEST['password'] ;
 
-$hashedPass = password_hash($pass, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO `users` ( `username` , `password` ) VALUES ( '$user' , '$pass' )" ;
 $res = mysqli_query( $con , $sql ) ;

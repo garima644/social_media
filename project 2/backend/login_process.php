@@ -12,7 +12,7 @@ if ( mysqli_num_rows($res) > 0 ) {
     $row = mysqli_fetch_assoc($res) ;
     $db_pass = $row["password"];
     
-    if (password_verify($pass, $db_pass)){
+    if ( $pass == $db_pass ) {
         $_SESSION["status"] = 1 ;
         $_SESSION["user_id"] = $row["id"] ;
         header('location:../home.php') ;
